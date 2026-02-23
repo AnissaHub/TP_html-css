@@ -1,0 +1,176 @@
+/* Style du titre principal */
+h1 {
+    color: #222;            /* Couleur du texte */
+    font-size: 26px;        /* Taille du texte */
+    margin-bottom: 20px;    /* Espace sous le titre */
+    text-align: center;     /* Centrer le texte */
+}
+
+/* Style de l'image */
+.profil img {
+    width: 100px;           /* Largeur de l'image */
+    height: 100px;          /* Hauteur de l'image */
+    border-radius: 50%;     /* Rend l'image ronde */
+    object-fit: cover;      /* Évite la déformation */
+    border: 3px solid #444; /* Bordure autour de l'image */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* Bloc des informations personnelles */
+.infos {
+   background-color: #f5f5f5; /* Couleur de fond */
+   padding: 15px;             /* Espace intérieur */
+   border-radius: 10px;       /* Coins arrondis */
+}
+
+
+.infos h2 {
+    color: #68649d;      
+    font-size: 22px;     
+    margin-bottom: 10px;  /* Espace sous le titre */
+}
+.infos p {
+    color: #555;         
+    font-size: 18px;      
+    margin-bottom: 10px;  
+}
+
+/* Conteneur du formulaire */
+.formulaire {
+  max-width: 500px; /* largeur maximale */
+  margin: 30px auto; /* centré sur la page */
+  padding: 25px; /* rembourrage intérieur */
+  background-color: #f5f5f5; /* fond clair */
+  border-radius: 12px;/* coins arrondis */
+  box-shadow: 0 5px 15px rgba(68, 186, 32, 0.1); /* ombre légère */
+  font-family: Arial, sans-serif; /* police */
+}
+/* Titre du formulaire */
+.formulaire h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+  font-size: 24px;
+}
+/* Chaque champ */
+.champ {
+  margin-bottom: 15px; /* espace entre les champs */
+  display: flex;       /*transformation en boite flexible*/
+  flex-direction: column; /* Les elements sont alignés verticalement (label au-dessus de l'input( */
+}
+
+/* Labels */
+.champ label {
+  margin-bottom: 5px;
+  font-weight: bold;   /*texte en gras*/
+  color: #333;
+}
+/* Inputs */
+.champ input {
+  width: 100%; /* occupe toute la largeur */
+  padding: 10px; /* espace à l'intérieur */
+  border: 1px solid #ccc; /* bordure grise */
+  border-radius: 6px; /* coins arrondis */
+  font-size: 16px;
+  box-sizing: border-box; /* inclut padding dans la largeur */
+}
+/* Input type file */
+.champ input[type="file"] {
+  padding: 5px;
+  cursor: pointer; /* montre que c’est cliquable */
+}
+/* Bouton */
+.champ button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #444; /* couleur bouton */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  
+}
+/* Effet au survol du bouton */
+.champ button:hover {
+  background-color: #066;
+  transform: scale(1.05);          /*zoom*/
+}
+.champ input[type="file"]:hover{
+    background-color:#eee;
+    border-color: #f5471c;
+    opacity: 0.7;               /*un peu transparent*/
+    transform: scale(1.05); 
+}
+/* zoom au passage de la souris */
+.profil img:hover {
+     transform: scale(1.2); 
+     
+}
+
+/* --------- footer --------- */
+footer{
+	background: #555;
+    text-align: center;
+    padding: 2em 0;
+    margin-top: 3em;
+}
+footer a{
+	color:  #fff;
+	text-decoration:  none;
+}
+
+/*------------------------------Responsive Design-------------------------------------------*/
+@media screen and (max-width: 36em) {
+  /* screen : cible les ecrans
+  max-width: 36em : applique ce CSS si la largeur de l ecran est inferieure ou egale a 36em
+  1em ≈ 16px : donc 36em ≈ 576px 
+  A l’intérieur, on peux redimensionner les images, textes, formulaires pour qu’ils restent lisibles.
+  */
+  
+  .profil img {
+      width: 80px;
+      height: 80px;
+  }
+
+  .formulaire {
+      width: 90%;           /*Le formulaire prend 90 % de la largeur de l’écran*/
+      max-width: 300px;     /*pas plus de 300px*/
+      margin: 20px auto;    /*centrer automatiquement*/
+      padding: 15px;
+  }
+
+  h1 {
+      font-size: 20px;
+  }
+
+  .infos h2,
+  .formulaire h2 {
+      font-size: 18px;
+  }
+
+  .infos p {
+      font-size: 16px;
+  }
+
+  .champ input {
+      font-size: 14px;
+  }
+
+  input::placeholder {
+      font-size: 0.85em;
+  }
+
+  .champ input[type="file"] {
+      width: 100%;
+      font-size: 14px;
+      padding: 8px;
+      appearance: none;           /* enlève le style par défaut du navigateur */
+      -webkit-appearance: none;   /*désactive le style par défaut*/
+  }
+
+  .champ input[type="file"]::file-selector-button {     /*::file-selector-button: permet de styliser uniquement ce bouton*/
+      margin: 0;                                        /* pas de marge autour du bouton */
+      padding: 6px 10px;
+  }
+}
